@@ -1,0 +1,388 @@
+
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> User -->
+<h1>--------------------------------------------->>> User >>></h1>
+ 
+<h4> 	>>Get current status</h4>
+<br/>	>>URL :GET /MyStatus
+<br/>	>>Required Parameter :
+<br/>	>>Return value :user status
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/MyStatus">
+Get my status :	
+			<input type="submit" value="MyStatus" />
+		</form>
+		
+		
+<h4> 	>>Login</h4>
+<br/>	>>URL :POST /login
+<br/>	>>Required Parameter :phone,password
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+login :	<form method="POST" action="/login">
+Enter Phone:	
+			<input type="text" name="phone">
+Password: 	<input type="password" name="password">
+			<input type="submit" value="login" action="/login">
+		</form>
+		
+		
+<h4> 	>>Logout</h4>
+<br/>	>>URL :GET /logout
+<br/>	>>Required Parameter :
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+		<form  action="/logout">
+logout :		
+			<input type="submit" value="logout" action="/logout"  >
+		</form>
+		
+		
+<h4> 	>>get user Info</h4>
+<br/>	>>URL :GET /user/findUserByID
+<br/>	>>Required Parameter :
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+		<form  action="/user/findUserByID">
+userID :		
+			<input type="text" name="id">
+			<input type="submit" value="Get">
+		</form>
+		
+		
+		
+<h4> 	>>send SMS</h4>
+<br/>	>>URL :GET	/user/sendSMS
+<br/>	>>Required Parameter :phone
+<br/>	>>Return value :u will get userID and a message with 6 number in it,
+<br/>	>>Description :Due is 3 min.
+<br/>
+Get SMS : 
+		<form method="GET" action="/user/sendSMS">
+Enter Phone:
+			<input type="text" name="phone">
+			<input type="submit" value="Get">
+		</form>
+		
+		
+<h4> 	>>resend SMS</h4>
+<br/>	>>URL :GET	/user/resendSMS
+<br/>	>>Required Parameter :phone
+<br/>	>>Return value :u will get userID and a message with 6 number in it,
+<br/>	>>Description :Due is 3 min.
+<br/>
+Get SMS : 
+		<form method="GET" action="/user/resendSMS">
+Enter Phone:
+			<input type="text" name="phone">
+			<input type="submit" value="Get">
+		</form>
+		
+		
+<h4> 	>>do Validate SMS</h4>
+<br/>	>>URL :POST	/user/doValidateSMS
+<br/>	>>Required Parameter :code
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+validate SMS :
+		<form method="POST" action="/user/doValidateSMS">
+Enter SMS:
+			<input type="text" name="sms">
+			<input type="submit" value="Validate">
+ 		</form>
+ 
+ 
+<h4> 	>>redo Validate SMS</h4>
+<br/>	>>URL :POST	/user/redoValidateSMS
+<br/>	>>Required Parameter :code
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+validate SMS :
+		<form method="POST" action="/user/redoValidateSMS">
+Enter SMS:
+			<input type="text" name="sms">
+			<input type="submit" value="Validate">
+ 		</form>
+ 
+ 
+ 
+<h4> 	>>CreatePsw</h4>
+<br/>	>>URL :POST	/user/createPsw
+<br/>	>>Required Parameter :password
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+CreatePsw :
+		<form method="POST" action="/user/createPsw">
+Password:	<input type="password"  name="password">
+			<input type="submit" value="Create">
+		</form>
+		
+		
+<h4> 	>>recreatePsw</h4>
+<br/>	>>URL :POST	/user/recreatePsw
+<br/>	>>Required Parameter :password
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+ChangePsw :
+		<form method="POST" action="/user/recreatePsw">
+Password:	<input type="password"  name="password">
+			<input type="submit" value="Change">
+		</form>
+
+
+<h4> 	>>CreateProfile</h4>
+<br/>	>>URL :POST	/user/createProfile
+<br/>	>>Required Parameter :
+<br/>	>>Return value :status
+<br/>	>>Description :if u want to request a personal image,u need to commit a image to 
+						file(URL :POST	/files/pictures/new) ,then give me the imageID returned
+<br/>
+CreateProfile :
+		<form method="POST" action="/user/createProfile">
+name:		<input type="text"  name="name">
+birthday:	<input type="text"  name="birthday">
+Gender:		<input type="text"  name="gender">
+status:		<input type="text"  name="status">
+profilePictureID:	<input type="text"  name="profilePictureID">
+coverPictureID:	<input type="text"  name="coverPictureID">
+			<input type="submit" value="Create">
+		</form>
+		
+		
+<h4> 	>>get star</h4>
+<br/>	>>URL :GET	/user/getStarOfTheDay
+<br/>	>>Required Parameter :
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/user/getStarOfTheDay">
+get star :
+			<input type="submit" value="get">
+		</form>
+		
+
+<h4> 	>>Update user info</h4>
+<br/>	>>URL :POST	/user/update
+<br/>	>>Required Parameter :user name
+<br/>	>>Return value :user status
+<br/>	>>Description :By now,user can change password,name but not phone.
+<br/>
+Update User:	
+		<form method="POST" action="/user/update">
+status :	<input type="text" name="status">
+name:
+			<input type="text" name="name">
+Gender:		<input type="text" name="gender">
+ProfilePictureID:		
+			<input type="text" name="profilePictureID">
+coverPictureID:	<input type="text"  name="coverPictureID">
+age:		<input type="text" name="age">
+			<input type="submit" value="update">
+		</form>
+
+
+<h4> 	>>Add a friend who is an user</h4>
+<br/>	>>URL :POST	/user/addFriend
+<br/>	>>Required Parameter :friendID
+<br/>	>>Return value :friend info
+<br/>	>>Description :
+<br/>
+Add a friend:
+		<form method="POST" action="/user/addFriend">
+FriendID:
+			<input type="text" name="friend">
+			<input type="submit" value="addFriend" >
+		</form>
+
+
+<h4> 	>>reply friend request</h4>
+<br/>	>>URL :POST	/user/replyFriendRequest
+<br/>	>>Required Parameter :friendID
+<br/>	>>Return value :friend info
+<br/>	>>Description :
+<br/>
+Reply friend request :
+		<form method="POST" action="/user/replyFriendRequest">
+FriendID:
+			<input type="text" name="friend">
+			<input type="submit" value="ReplyFriendRequest" >
+		</form>
+
+
+<h4> 	>>Find unaudited friends</h4>
+<br/>	>>URL :GET	/user/findFriendsUnaudited
+<br/>	>>Required Parameter :
+<br/>	>>Return value :friend info
+<br/>	>>Description :
+<br/>
+Reply friend request :
+		<form method="GET" action="/user/findFriendsUnaudited">
+			<input type="submit" value="FindFriendsUnaudited" >
+		</form>
+
+
+<h4> 	>>Get friend list of one user</h4>
+<br/>	>>URL :GET	/user/findFriends
+<br/>	>>Required Parameter :friendID
+<br/>	>>Return value :friend list
+<br/>	>>Description :
+<br/>		
+		<form method="GET" action="/user/findFriends">
+Show all one user's friend's ID:
+			<input type="text" value="id">
+			<input type="submit" value="Get" >
+		</form>
+<br/>
+
+
+<h4> 	>>Add an user to blackList</h4>
+<br/>	>>URL :POST	/user/add2BlackList
+<br/>	>>Required Parameter :userID
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+Add a user to blackList:
+		<form method="POST" action="/user/add2BlackList">
+UserID:
+			<input type="text" name="aversion">
+			<input type="submit" value="Add2BlackList" >
+		</form>
+		
+		
+<h4> 	>>Get the blackList</h4>
+<br/>	>>URL :GET	/user/getBlackList
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+Get my blackList:
+		<form method="GET" action="/user/getBlackList">
+			<input type="submit" value="GetBlackList" >
+		</form>
+		
+		
+<h4> 	>>Remove user from blackList</h4>
+<br/>	>>URL :POST	/user/deleteUserFromBlackList
+<br/>	>>Required Parameter :userID
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+Remove user from blackList :
+		<form method="POST" action="/user/deleteUserFromBlackList">
+UserID :	<input type="text" name="aversion" >		
+			<input type="submit" value="DeleteUserFromBlackList" >
+		</form>
+		
+		
+<h4> 	>>Remove user from friend List</h4>
+<br/>	>>URL :POST	/user/deleteUserFromFriendList
+<br/>	>>Required Parameter :userID
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+Remove user from friend list :
+		<form method="POST" action="/user/deleteUserFromFriendList">
+UserID :	<input type="text" name="friend" >		
+			<input type="submit" value="DeleteUserFromFriendList" >
+		</form>
+		
+
+<h4> 	>>follow this user</h4>
+<br/>	>>URL :POST	/user/follow
+<br/>	>>Required Parameter :userID
+<br/>	>>Return value :
+<br/>	>>Description :Follow the userID.
+<br/>
+Follow user:
+		<form method="POST" action="/user/follow">
+UserID :	<input type="text" name="id" >		
+			<input type="submit" value="follow" >
+		</form>
+		
+		
+		<h4> 	>>unfollow this user</h4>
+<br/>	>>URL :POST	/user/unfollow
+<br/>	>>Required Parameter :userID
+<br/>	>>Return value :
+<br/>	>>Description :unfollow the userID.
+<br/>
+unfollow user:
+		<form method="POST" action="/user/unfollow">
+UserID :	<input type="text" name="id" >		
+			<input type="submit" value="unfollow" >
+		</form>
+		
+		
+<h4> 	>>get all i follow</h4>
+<br/>	>>URL :GET user/whoIFollowed
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/user/whoIFollowed">
+userId:
+			<input type="text" name="id">
+			<input type="submit" value="get" >
+		</form>
+		
+		
+<h4> 	>>get who follow me</h4>
+<br/>	>>URL :GET user/whoFollowMe
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/user/whoFollowMe">
+userId:
+			<input type="text" name="id">
+			<input type="submit" value="Get" >
+		</form>
+		
+<h4> 	>>get all shop user follow</h4>
+<br/>	>>URL :GET user/whoShopIFollowed
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/user/whoShopIFollowed">
+userId:
+			<input type="text" name="id">
+			<input type="submit" value="get" >
+		</form>
+		
+		
+		
+		
+		
+		<h4> 	>>My fashion level</h4>
+<br/>	>>URL :GET user/myUserLevel
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/user/myUserLevel">
+userId:
+			
+			<input type="submit" value="level" >
+		</form>
+		
+				
+		<h4> 	>>My information</h4>
+<br/>	>>URL :GET /user/myInformations
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/user/myInformations">
+userId:
+			
+			<input type="submit" value="info" >
+		</form>
+		

@@ -1,0 +1,156 @@
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> File -->
+<h1>--------------------------------------------->>> File >>></h1>
+    
+    
+<h4> 	>>Get file</h4>
+<br/>	>>URL :GET	/file/:fileType/:fileID+ExtName
+<br/>	>>Required Parameter :/file/fileType/fileID+ExtName
+<br/>	>>Return value :FileStream
+<br/>	>>Description :Any downloaded file except text must ask for this URL with fileID!
+<br/>
+
+
+<h4> 	>>Upload File</h4>
+<br/>	>>URL :POST	/file/videos/new
+<br/>	>>Required Parameter :a File
+<br/>	>>Return value :FileName or status
+<br/>	>>Description :Any uploaded file except text must ask for this URL then take this fileID back to the owner!
+						And give me the thumbnail size u want.
+<br/>
+		<form action="file/videos/new" method="POST" enctype="multipart/form-data">
+Upload file video:
+      		<input type="file" name="file" />
+    		<button type="submit">Upload</button>
+   		</form>
+   		
+   		
+<h4> 	>>Get file list of current user</h4>
+<br/>	>>URL :GET	file/videos/mine
+<br/>	>>Required Parameter :
+<br/>	>>Return value :File-list
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="file/videos/mine">
+See all your video:
+			<button type="submit">My videos</button>
+		</form>
+
+
+<h4> 	>>Delete file</h4>
+<br/>	>>URL :POST /file/videos/destroy/fileID+ExtName
+<br/>	>>Required Parameter :fileID+ExtName
+<br/>	>>Return value :fileType or status
+<br/>	>>Description :Name mustn't be blank!
+<br/>
+See delete one of your videos   	
+   		<script type="text/javascript"> 
+   	    	function goDeleteVideos () {
+				document.deleteVideos.action="file/videos/destroy/"+
+												document.deleteVideos.elements["filedelete"].value;
+				return true; }
+		</script>
+		
+		<form name="deleteVideos" method="POST" onsubmit="return goDeleteVideos();" >
+video Name : 
+			<input type="text" name="filedelete">
+			<button type="submit">Delete My videos</button>
+    	</form>
+    
+    
+<h4> 	>>Upload File</h4>
+<br/>	>>URL :POST	/file/sounds/new
+<br/>	>>Required Parameter :a File
+<br/>	>>Return value :FileName or status
+<br/>	>>Description :Any uploaded file except text must ask for this URL then take this fileID back to the owner!
+<br/>
+    	<form action="file/sounds/new" method="POST" enctype="multipart/form-data">
+Upload file sounds:
+      		<input type="file" name="file" />
+    		<button type="submit">Upload</button>
+   		</form>
+   	
+   	
+<h4> 	>>Get file list of current user</h4>
+<br/>	>>URL :GET	file/sounds/mine
+<br/>	>>Required Parameter :
+<br/>	>>Return value :File-list
+<br/>	>>Description :
+<br/>
+   		<form method="GET" action="file/sounds/mine">
+See all your sounds:
+       		<button type="submit">My sounds</button>
+    	</form>
+   	
+   		<script type="text/javascript"> 
+   	    	function goDeleteSounds () {
+		  		document.deleteSounds.action="file/sounds/destroy/"+  
+		  										document.deleteSounds.elements["filedelete"].value;
+				return true; }
+		</script>
+	
+	
+<h4> 	>>Delete file</h4>
+<br/>	>>URL :POST /file/sounds/destroy/fileID+ExtName
+<br/>	>>Required Parameter :fileID+ExtName
+<br/>	>>Return value :fileType or status
+<br/>	>>Description :Name mustn't be blank!
+<br/>	
+See delete one of your sounds 
+		<script type="text/javascript"> 
+   	    	function goDeleteSounds () {
+				document.deleteSounds.action="file/sounds/destroy/"+
+												document.deleteSounds.elements["filedelete"].value;
+				return true; }
+		</script>
+   		<form name="deleteSounds" method="POST" onsubmit="return goDeleteSounds();" >
+sound Name: 
+			<input type="text" name="filedelete">
+       		<button type="submit">Delete My sounds</button>
+    	</form>
+        	
+     
+<h4> 	>>Upload File</h4>
+<br/>	>>URL :POST	/file/pictures/new
+<br/>	>>Required Parameter :a File
+<br/>	>>Return value :FileName or status
+<br/>	>>Description :Any uploaded file except text must ask for this URL then take this fileID back to the owner!
+<br/>      	
+    	<form action="file/pictures/new" method="POST" enctype="multipart/form-data">
+Upload file pictures:
+      		<input type="file" name="file" />
+    		<button type="submit">Upload</button>
+   		</form>
+   	
+   	
+<h4> 	>>Get file list of current user</h4>
+<br/>	>>URL :GET	file/pictures/mine
+<br/>	>>Required Parameter :
+<br/>	>>Return value :File-list
+<br/>	>>Description :
+<br/>  	
+   		<form method="GET" action="file/pictures/mine">
+See all your pictures:    
+       		<button type="submit">My pictures</button>
+    	</form>
+   	
+   	
+<h4> 	>>Delete file</h4>
+<br/>	>>URL :POST /file/pictures/destroy/fileID+ExtName
+<br/>	>>Required Parameter :fileID+ExtName
+<br/>	>>Return value :fileType or status
+<br/>	>>Description :Name mustn't be blank!
+<br/>
+   		<script type="text/javascript"> 
+   	    	function goDeletePicture () {
+		 		document.deletePicture.action="file/pictures/destroy/"+  
+		 										document.deletePicture.elements["filedelete"].value;
+				return true; }
+		</script>
+See delete one of your picture:		
+   		<form name="deletePicture" method="POST" onsubmit="return goDeletePicture();" >
+picture Name : 
+			<input type="text" name="filedelete">
+       		<button type="submit">Delete My pictures</button>
+    	</form>
+
+				

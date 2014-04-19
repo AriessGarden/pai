@@ -1,0 +1,179 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+# >>>>>>>>>>>>>>>>>>>
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>HTML
+# HTML
+GET     /                           com.pencho.pai.controllers.Application.index()
+GET		/user						com.pencho.pai.controllers.Application.user()
+GET     /MyStatus                   com.pencho.pai.controllers.Application.MyStatus()
+POST    /login	                    com.pencho.pai.controllers.Application.login()
+GET     /logout                     com.pencho.pai.controllers.Application.logout()
+GET		/file						com.pencho.pai.controllers.Application.file()
+GET		/comment					com.pencho.pai.controllers.Application.comment()
+GET		/product					com.pencho.pai.controllers.Application.product()
+GET		/news						com.pencho.pai.controllers.Application.news()
+GET		/post						com.pencho.pai.controllers.Application.post()
+GET		/help						com.pencho.pai.controllers.Application.help()
+GET		/shop						com.pencho.pai.controllers.Application.shop()
+GET		/search						com.pencho.pai.controllers.Application.search()
+GET		/message					com.pencho.pai.controllers.Application.message()
+GET		/snapShot					com.pencho.pai.controllers.Application.snapShot()
+GET		/share						com.pencho.pai.controllers.Application.share()
+GET		/wardrobe					com.pencho.pai.controllers.Application.wardrobe()
+GET		/wholeSale					com.pencho.pai.controllers.Application.wholeSale()
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>File
+## File
+POST    /file/:filesType/new				com.pencho.pai.controllers.FileManager.createFile(filesType, width: Integer ?=256, length: Integer ?=144, width2: Integer ?=512, length2: Integer ?=288)
+POST 	/file/:filesType/destroy/*file		com.pencho.pai.controllers.FileManager.destroyFile(filesType, file)
+GET     /file/:filesType/mine				com.pencho.pai.controllers.FileManager.getMyFile(filesType, page: Integer ?= 1, nbObjectByPage: Integer ?= 50)
+GET     /file/:filesType/*file            	com.pencho.pai.controllers.FileManager.getFile(filesType, file)
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>User
+## User
+GET		/user/sendSMS						com.pencho.pai.controllers.UserController.sendSMS()
+GET		/user/resendSMS						com.pencho.pai.controllers.UserController.resendSMS()
+POST	/user/doValidateSMS					com.pencho.pai.controllers.UserController.doValidateSMS()
+POST	/user/redoValidateSMS				com.pencho.pai.controllers.UserController.redoValidateSMS()
+POST 	/user/createPsw						com.pencho.pai.controllers.UserController.createPsw()
+POST 	/user/recreatePsw					com.pencho.pai.controllers.UserController.recreatePsw()
+POST	/user/createProfile					com.pencho.pai.controllers.UserController.createProfile()
+GET		/user/getStarOfTheDay				com.pencho.pai.controllers.UserController.getStarOfTheDay()
+POST	/user/replyFriendRequest			com.pencho.pai.controllers.UserController.replyFriendRequest()
+POST	/user/update						com.pencho.pai.controllers.UserController.update()
+POST	/user/addFriend						com.pencho.pai.controllers.UserController.addFriend()
+POST	/user/add2BlackList					com.pencho.pai.controllers.UserController.add2BlackList()
+POST	/user/deleteUserFromBlackList		com.pencho.pai.controllers.UserController.deleteUserFromBlackList()
+POST	/user/deleteUserFromFriendList		com.pencho.pai.controllers.UserController.deleteUserFromFriendList()
+GET		/user/getBlackList					com.pencho.pai.controllers.UserController.getBlackList()
+GET		/user/findFriendsUnaudited			com.pencho.pai.controllers.UserController.findFriendsUnaudited()
+GET 	/user/find		          			com.pencho.pai.controllers.UserController.find(page: Integer = 1, nbObjectByPagepage: Integer = 1,phone ) 
+GET		/user/findFriends					com.pencho.pai.controllers.UserController.findFriends()
+GET		/user/findUserByID					com.pencho.pai.controllers.UserController.findUserByID()
+POST	/user/follow						com.pencho.pai.controllers.UserController.follow()
+GET		/user/whoFollowMe					com.pencho.pai.controllers.UserController.whoFollowMe(id)
+GET		/user/whoIFollowed					com.pencho.pai.controllers.UserController.whoIFollowed(id)
+GET		/user/whoShopIFollowed				com.pencho.pai.controllers.UserController.whoShopIFollowed(id)
+GET		/user/findByUsername				com.pencho.pai.controllers.UserController.findByUsername(username : String)
+POST	/user/unfollow						com.pencho.pai.controllers.UserController.unfollow()
+GET		/user/myUserLevel					com.pencho.pai.controllers.UserController.myUserLevel()
+GET		/user/myInformations				com.pencho.pai.controllers.UserController.myInformations()
+
+
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Comment
+## Comment
+POST	/comment/create						com.pencho.pai.controllers.CommentController.create()
+POST	/comment/delete						com.pencho.pai.controllers.CommentController.delete()
+POST	/comment/edit						com.pencho.pai.controllers.CommentController.edit()
+GET		/comment/findByUserID				com.pencho.pai.controllers.CommentController.findByUserID(start: Integer ?= 1,end: Integer ?=16)
+GET		/comment/findByHelpID				com.pencho.pai.controllers.CommentController.findByHelpID(helpID, start: Integer ?= 1,end: Integer ?=16)
+GET		/comment/findByPostID				com.pencho.pai.controllers.CommentController.findByPostID(postID, start: Integer ?= 1,end: Integer ?=16)
+GET		/comment/findByProductID			com.pencho.pai.controllers.CommentController.findByProductID(productID, start: Integer ?= 1,end: Integer ?=16)
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>News
+## News
+# only create by pencho server
+POST	/news/create						com.pencho.pai.controllers.FashionNewsController.create()
+GET		/news/get							com.pencho.pai.controllers.FashionNewsController.get(start: Integer ?= 1,end: Integer ?=16)
+POST	/news/like							com.pencho.pai.controllers.FashionNewsController.like()
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Help
+## Help 
+POST	/help/create						com.pencho.pai.controllers.FashionHelpController.create()
+POST	/help/edit							com.pencho.pai.controllers.FashionHelpController.edit()
+POST	/help/delete						com.pencho.pai.controllers.FashionHelpController.delete()
+GET		/help/get							com.pencho.pai.controllers.FashionHelpController.get(start: Integer ?= 1,end: Integer ?=16)
+POST	/help/saveHelp						com.pencho.pai.controllers.FashionHelpController.saveHelp()
+POST	/help/unsaveHelp					com.pencho.pai.controllers.FashionHelpController.unsaveHelp()
+GET		/help/getSavedHelp					com.pencho.pai.controllers.FashionHelpController.getSavedHelp()
+POST	/help/like							com.pencho.pai.controllers.FashionHelpController.like()
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Product
+## Product
+POST	/product/create						com.pencho.pai.controllers.ProductController.create()
+POST	/product/edit						com.pencho.pai.controllers.ProductController.edit()
+POST	/product/delete						com.pencho.pai.controllers.ProductController.delete()
+GET		/product/findByShopID				com.pencho.pai.controllers.ProductController.findByShopID(start: Integer ?= 1,end: Integer ?=16)
+GET		/product/findTrendyStyleByShopID	com.pencho.pai.controllers.ProductController.findTrendyStyleByShopID(shopID, start: Integer ?= 1,end: Integer ?=16)
+POST	/product/like						com.pencho.pai.controllers.ProductController.like()
+GET 	/product/getHot						com.pencho.pai.controllers.ProductController.getHot(start: Integer ?= 1,end: Integer ?=16)
+GET 	/product/findByID					com.pencho.pai.controllers.ProductController.findByID()
+POST	/product/add2WishList				com.pencho.pai.controllers.ProductController.add2WishList()
+GET		/product/wishListOfUserID			com.pencho.pai.controllers.ProductController.wishListOfUserID(userID, start: Integer ?= 1,end: Integer ?=16)
+POST	/product/removeFromWishList			com.pencho.pai.controllers.ProductController.removeFromWishList
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Post
+## Post
+POST	/post/create						com.pencho.pai.controllers.PostController.create()
+POST	/post/edit							com.pencho.pai.controllers.PostController.edit()
+POST	/post/delete						com.pencho.pai.controllers.PostController.delete()
+GET		/post/get							com.pencho.pai.controllers.PostController.get(postID)
+GET		/post/getPublic						com.pencho.pai.controllers.PostController.getPublic(start: Integer ?= 1,end: Integer ?=16)
+GET		/post/getFollower					com.pencho.pai.controllers.PostController.getFollower(start: Integer ?= 1,end: Integer ?=16)
+GET		/post/getFriend						com.pencho.pai.controllers.PostController.getFriend(start: Integer ?= 1,end: Integer ?=16)
+GET		/post/getShowOff					com.pencho.pai.controllers.PostController.getShowOff(userID, start: Integer ?= 1,end: Integer ?=16)
+GET 	/post/getAllFromUserID				com.pencho.pai.controllers.PostController.getAllFromUserID(userID, start: Integer ?= 1,end: Integer ?=16)
+POST	/post/like							com.pencho.pai.controllers.PostController.like()
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Shop
+## Shop
+GET		/shop/set							com.pencho.pai.controllers.ShopController.set(pic1: String ?="",pic2: String ?="",video1: String ?="",video2: String ?="",video3: String ?="",video4: String ?="",video5: String ?="",video6: String ?="")
+GET		/shop/getMine  						com.pencho.pai.controllers.ShopController.getMine()
+GET		/shop/getShopById					com.pencho.pai.controllers.ShopController.getShopById()
+POST	/shop/drop  						com.pencho.pai.controllers.ShopController.drop()
+POST	/shop/revert  						com.pencho.pai.controllers.ShopController.revert()
+POST	/shop/like  						com.pencho.pai.controllers.ShopController.like()
+GET		/shop/getShopAround					com.pencho.pai.controllers.ShopController.getShopAround(radius: Double ?= 1, longitude: Double ?= 50,latitude: Double ?= 50)
+POST	/shop/follow						com.pencho.pai.controllers.ShopController.follow()
+POST	/shop/unfollow						com.pencho.pai.controllers.ShopController.unfollow()
+GET		/shop/myShopLevel					com.pencho.pai.controllers.ShopController.myShopLevel()
+POST	/shop/share							com.pencho.pai.controllers.ShopController.share()
+
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Message
+## Message
+POST	/message/create							com.pencho.pai.controllers.MessageController.create()
+GET		/message/getMy							com.pencho.pai.controllers.MessageController.getMy(start: Integer ?= 1,end: Integer ?=16)
+GET		/message/getMessageSend					com.pencho.pai.controllers.MessageController.getMessageSend(start: Integer ?= 1,end: Integer ?=16)
+POST	/message/destroy						com.pencho.pai.controllers.MessageController.destroy()
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Snapshot
+## Snapshot
+POST	/snapshot/create						com.pencho.pai.controllers.SnapShotController.create()
+GET		/snapshot/getByUserID					com.pencho.pai.controllers.SnapShotController.getByUserID(userID, start: Integer ?= 1,end: Integer ?=16)
+POST	/snapshot/like							com.pencho.pai.controllers.SnapShotController.like()
+POST	/snapshot/destroy						com.pencho.pai.controllers.SnapShotController.destroy()
+GET 	/snapshot/get							com.pencho.pai.controllers.SnapShotController.get(snapshotID)
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Search
+## Search 
+GET 	/search/product						com.pencho.pai.controllers.SearchController.findProductBy(productProperty: String ?="", lowPrice: String ?="", highPrice: String ?="", priceOrder: String ?="")
+GET 	/search/shop						com.pencho.pai.controllers.SearchController.findShopBy(shopProperty: String ?="")
+GET 	/search/user						com.pencho.pai.controllers.SearchController.findUserBy(userProperty: String ?="")
+GET 	/search/sortUserByGender			com.pencho.pai.controllers.SearchController.findUserByGender(genderStr: String ?="")
+GET 	/search/friend						com.pencho.pai.controllers.SearchController.findFriendBy(friendProperty: String ?="")
+GET 	/search/friendByGender				com.pencho.pai.controllers.SearchController.findFriendByGender(genderStr: String ?="")
+GET 	/search/wishlist					com.pencho.pai.controllers.SearchController.findWishlistBy(wishlistProperty: String ?="")
+GET 	/search/fashionHelp					com.pencho.pai.controllers.SearchController.findFashionHelpBy(fashionHelpProperty: String ?="")
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Share
+## Share
+GET		/share/getByUserID					com.pencho.pai.controllers.ShareController.getByUserID(userID: String ?="", theType: String ?="")
+POST	/share/post							com.pencho.pai.controllers.ShareController.shareOfPost()
+POST	/share/product						com.pencho.pai.controllers.ShareController.shareOfProduct()
+POST	/share/snapshot						com.pencho.pai.controllers.ShareController.shareOfSnapShot()
+POST	/share/wardrobe						com.pencho.pai.controllers.ShareController.shareOfWardrobe()
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Wardrobe
+## Wardrobe
+POST	/wardrobe/create					com.pencho.pai.controllers.WardrobeController.create()
+GET		/wardrobe/getByUserID				com.pencho.pai.controllers.WardrobeController.getByUserID(userID, start: Integer ?= 1,end: Integer ?=16)
+POST	/wardrobe/like						com.pencho.pai.controllers.WardrobeController.like()
+POST	/wardrobe/destroy					com.pencho.pai.controllers.WardrobeController.destroy()
+GET 	/wardrobe/get						com.pencho.pai.controllers.WardrobeController.get(wardrobeID)
+
+  

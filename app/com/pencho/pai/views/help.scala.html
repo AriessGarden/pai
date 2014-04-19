@@ -1,0 +1,152 @@
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Help -->
+<h1>--------------------------------------------->>> Help >>></h1>
+
+
+<h4> 	>>Create Help</h4>
+<br/>	>>URL :POST	/help/create
+<br/>	>>Required Parameter :
+<br/>	>>Return value :help information
+<br/>	>>Description :
+<br/>
+Create help :	
+
+		<form method="POST" action="/help/create">
+pictureID:
+			<input type="text" name="pictureID"> 
+			
+description:
+			<input type="text" name="description"> 
+			<input type="submit" value="CreateHelp" >
+		</form>
+
+<h4> 	>>Edit Help</h4>
+<br/>	>>URL :POST	/help/edit
+<br/>	>>Required Parameter :
+<br/>	>>Return value :help information
+<br/>	>>Description :
+<br/>
+edit help :	
+
+		<form method="POST" action="/help/edit">
+pictureID:
+			<input type="text" name="pictureID"> 
+			
+description:
+			<input type="text" name="description"> 
+			<input type="submit" value="Edit" >
+		</form>
+		
+<h4> 	>>delete help </h4>
+<br/>	>>URL :POST	/help/delete
+<br/>	>>Required Parameter :
+<br/>	>>Return value :
+<br/>	>>Description :
+<br/>
+delete help :	
+		<form method="POST" action="/help/delete">
+id:	
+			<input type="text" name="id">		
+			<input type="submit" value="delete" >
+		</form>
+		
+
+Retrieve help :
+
+<h4> 	>>Get help by username</h4>
+<br/>	>>URL :GET	/help/findByUsername
+<br/>	>>Required Parameter : username
+<br/>	>>Return value :helps information
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/help/findByUsername">
+Find all my helps:
+Username :		<input type="text" name="username" >
+    		<input type="submit" value= "FindHelpsByUsername">
+    	</form>
+<br/>
+
+Delete help :	
+
+		<form method="get" action="/help/delete">
+helpID	
+			<input type="text" name="helpID">
+			<input type="submit" value="DeleteHelp" >
+		</form>	
+<br/>
+<br/>
+
+get help :
+<h4> 	>>Get helps </h4>
+<br/>	>>URL :GET	/help/get
+<br/>	>>Required Parameter :
+<br/>	>>Return value :helps information
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/help/get">
+Range from :	<input type="text" name="start" >
+to :			<input type="text" name="end" >
+			<input type="submit" value= GetHelp>
+		</form> 
+<br />
+
+save help :
+
+<h4> 	>>Save help</h4>
+<br/>	>>URL :POST	/help/saveHelp
+<br/>	>>Required Parameter :id
+<br/>	>>Return value :helps information
+<br/>	>>Description :
+<br/>
+		<form method="POST" action="/help/saveHelp">
+id :	<input type="text" name="id" >
+			<input type="submit" value= Save>
+		</form> 
+<br />
+
+
+unsave help :
+
+<h4> 	>>unsave help</h4>
+<br/>	>>URL :POST	/help/unsaveHelp
+<br/>	>>Required Parameter :id
+<br/>	>>Return value :status
+<br/>	>>Description :
+<br/>
+		<form method="POST" action="/help/unsaveHelp">
+id :	<input type="text" name="id" >
+			<input type="submit" value= remove>
+		</form> 
+<br />
+
+
+get saved help :
+
+<h4> 	>>Get helps save by you</h4>
+<br/>	>>URL :GET	/help/getSavedHelp
+<br/>	>>Required Parameter :
+<br/>	>>Return value :helps information
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/help/getSavedHelp">
+			<input type="submit" value= GetSavedHelp>
+		</form> 
+<br />
+
+<h4> 	>>if u like this help</h4>
+<br/>	>>URL :"POST"	/help/like
+<br/>	>>Required Parameter :
+<br/>	>>Return value :help information
+<br/>	>>Description :like value 0 or 1
+<br/>
+Like this help :	
+		<form method="POST" action="/help/like">
+helpID:	<input type="text" name="id">
+like:		<input type="text" name="isLike">
+			<input type="submit" value="like/unlike" >
+		</form>
+
+
+
+
+
+

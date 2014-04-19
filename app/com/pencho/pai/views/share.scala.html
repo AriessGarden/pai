@@ -1,0 +1,78 @@
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Share -->
+<h1>--------------------------------------------->>> Share >>></h1>
+
+
+<h4> 	>>Share Post</h4>
+<br/>	>>URL :POST	/share/post
+<br/>	>>Required Parameter :
+<br/>	>>Return value :Post information
+<br/>	>>Description :
+<br/>
+Create Post :	
+		<form method="POST" action="/share/post">
+postID:
+			<input type="text" name="id"> 
+isPublic:	 true or false
+			<input type="text" name="isPublic">
+			<input type="submit" value="Share" >
+		</form>
+
+<h4> 	>>Share Product</h4>
+<br/>	>>URL :POST	/share/product
+<br/>	>>Required Parameter :
+<br/>	>>Return value :Post information
+<br/>	>>Description :
+<br/>
+Create Post :	
+		<form method="POST" action="/share/product">
+productID:
+			<input type="text" name="id"> 
+isPublic:	 true or false
+			<input type="text" name="isPublic">
+			<input type="submit" value="Share" >
+		</form>
+		
+<h4> 	>>Share SnapShot</h4>
+<br/>	>>URL :POST	/share/snapshot
+<br/>	>>Required Parameter :
+<br/>	>>Return value :Post information
+<br/>	>>Description :
+<br/>
+Create Post :	
+		<form method="POST" action="/share/snapshot">
+snapshotID:
+			<input type="text" name="id"> 
+isPublic:	 true or false
+			<input type="text" name="isPublic">
+			<input type="submit" value="Share" >
+		</form>
+		
+<h4> 	>>Share Wardrobe</h4>
+<br/>	>>URL :POST	/share/wardrobe
+<br/>	>>Required Parameter :
+<br/>	>>Return value :Post information
+<br/>	>>Description :
+<br/>
+Create Post :	
+		<form method="POST" action="/share/wardrobe">
+wardrobeID:
+			<input type="text" name="id"> 
+isPublic:	 true or false
+			<input type="text" name="isPublic">
+			<input type="submit" value="Share" >
+		</form>
+		
+		
+<h4> 	>>Get all shared stuff</h4>
+<br/>	>>URL :GET	/share/getByUserID
+<br/>	>>Required Parameter :userID,type
+<br/>	>>Return value :Shared information
+<br/>	>>Description : if u don't fullfill this form,means current user(yourself),type default is post.
+<br/>
+Create Post :	
+		<form method="GET" action="/share/getByUserID">
+userID:
+			<input type="text" name="userID"> 
+type:		<input type="text" name="theType">
+			<input type="submit" value="Share" >
+		</form>

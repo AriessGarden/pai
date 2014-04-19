@@ -1,0 +1,63 @@
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> news -->
+<h1>--------------------------------------------->>> news >>></h1>
+
+
+<h4> 	>>Create news</h4>
+<br/>	>>URL :POST	/news/create
+<br/>	>>Required Parameter :
+<br/>	>>Return value :news information
+<br/>	>>Description :
+<br/>
+Create news :	
+		<form method="POST" action="/news/create">
+pictureID:
+			<input type="text" name="pictureID"> 
+videoID:
+			<input type="text" name="videoID"> 
+newsText:
+			<input type="text" name="newsText"> 
+
+			<input type="submit" value="CreateNews" >
+		</form>
+
+ 
+<h4> 	>>Get news </h4>
+<br/>	>>URL :GET	/news/get
+<br/>	>>Required Parameter :start, end
+<br/>	>>Return value :news information
+<br/>	>>Description :
+<br/>
+		<form method="GET" action="/news/get">
+
+Range from :	<input type="text" name="start" >
+to :			<input type="text" name="end" >
+			<input type="submit" value="get news">
+		</form> 
+<br />
+
+ 
+    	
+ <h4> 	>>if u like this news or not</h4>
+<br/>	>>URL :"POST"	/news/like
+<br/>	>>Required Parameter :
+<br/>	>>Return value :news information
+<br/>	>>Description :like value 0 or 1
+<br/>
+		
+Find product :	
+		<form  method="POST" action="/news/like">
+newsID:	<input type="text" name="id">
+like:		<input type="text" name="isLike">
+			<input type="submit" value="like/unlike" >
+		</form>
+
+
+
+
+
+
+
+
+
+
+

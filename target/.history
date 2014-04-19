@@ -1,0 +1,20 @@
+clean
+eclipse
+run
+run -Dhttp.port=9999
+run 999
+run
+run 9999
+run
+run 9999
+run
+run 9999
+run
+compile
+run
+clean
+compile
+last compile:run
+run
+run 9999
+run

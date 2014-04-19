@@ -1,0 +1,127 @@
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> search -->
+<h1>--------------------------------------------->>>PAI Search Engine >>></h1>
+
+
+<h4> 	>>Search for Product</h4>
+<br/>	>>URL :GET	/product
+<br/>	>>Required Parameter : area|tags|title|description
+<br/>	>>Return value :product information
+<br/>	>>Description :
+<br/>		
+Find product :	
+		<form  method="GET" action="/search/product">
+product property:	
+			<input type="text" name="productProperty">
+price range:			
+			<input type="text" name="lowPrice" />
+			<input type="text" name="highPrice" /><br/>
+Ascend: 	<input type="radio" name="priceOrder" value="asc" /><br/>
+Descend£º 	<input type="radio" name="priceOrder" value="desc" /><br/>
+			<input type="submit" value="Search" />
+		</form>
+<br/>
+
+<h4> 	>>Search for Shop</h4>
+<br/>	>>URL :GET	/shop
+<br/>	>>Required Parameter : area|tags|description|phone|name
+<br/>	>>Return value :shop information
+<br/>	>>Description :
+<br/>		
+Find shop :	
+		<form  method="GET" action="/search/shop">
+shop property:	<input type="text" name="shopProperty">
+			<input type="submit" value="Search Shop" >
+		</form>
+<br/>
+
+
+<h4> 	>>Search User by gender</h4>
+<br/>	>>URL :GET	/user
+<br/>	>>Required Parameter : gender
+<br/>	>>Return value :user information
+<br/>	>>Description :
+<br/>		
+input gender :	
+		<form  method="get" action="/search/sortUserByGender">
+				Male: <input type="radio" name="genderStr" value="male" /><br/>
+				Female£º <input type="radio" name="genderStr" value="female" /><br/>
+				All£º <input type="radio" name="genderStr" value="all" /><br/>
+				<input type="submit" value="Search" />
+		</form>
+		
+<br/>
+
+<h4> 	>>Search for User</h4>
+<br/>	>>URL :GET	/user
+<br/>	>>Required Parameter : area|gender|age|phone|name
+<br/>	>>Return value :user information
+<br/>	>>Description :
+<br/>		
+Find user :	
+		<form  method="GET" action="/search/user">
+user property:	<input type="text" name="userProperty">
+			<input type="submit" value="Search User" >
+		</form>
+<br/>
+
+<h4> 	>>Search for Friend</h4>
+<br/>	>>URL :GET	/friend
+<br/>	>>Required Parameter : gender|area|phone|name
+<br/>	>>Return value :friend (user) information
+<br/>	>>Description :
+<br/>		
+Find friend :	
+		<form  method="GET" action="/search/friend">
+friend property:	<input type="text" name="friendProperty">
+			<input type="submit" value="Search Friend" >
+		</form>
+<br/>
+
+
+<h4> 	>>Sort Friend by gender</h4>
+<br/>	>>URL :GET	/friendByGender
+<br/>	>>Required Parameter : gender
+<br/>	>>Return value :friend (user) information
+<br/>	>>Description :
+<br/>		
+Choose gender of friends:	
+		<form  method="get" action="/search/friendByGender">
+				Male: <input type="radio" name="genderStr" value="male" /><br/>
+				Female£º <input type="radio" name="genderStr" value="female" /><br/>
+				All£º <input type="radio" name="genderStr" value="all" /><br/>
+				<input type="submit" value="Search" />
+		</form>
+
+<h4> 	>>Search for Wishlist</h4>
+<br/>	>>URL :GET	/wishlist
+<br/>	>>Required Parameter : area|tags|description
+<br/>	>>Return value :wishlist (product) information
+<br/>	>>Description :
+<br/>		
+Find wishlist :	
+		<form  method="GET" action="/search/wishlist">
+wishlist property:	<input type="text" name="wishlistProperty">
+			<input type="submit" value="Search Wishlist" >
+		</form>
+<br/>
+
+
+<h4> 	>>Search for FashionHelp</h4>
+<br/>	>>URL :GET	/fashionHelp
+<br/>	>>Required Parameter : userName|description
+<br/>	>>Return value :FashionHelp information
+<br/>	>>Description :
+<br/>		
+Find FashionHelp :	
+		<form  method="GET" action="/search/fashionHelp">
+FashionHelp Property:	<input type="text" name="fashionHelpProperty">
+			<input type="submit" value="Search FashionHelp" >
+		</form>
+<br/>
+
+
+
+
+
+
+
